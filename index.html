@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keenan Portfolio Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 10px;
+        }
+
+        .logo {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 27px;
+            cursor: default;
+            animation: slideLeft 1s ease forwards;
+            opacity: 0;
+        }
+
+        .navbar a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            padding: 0px 16px;
+            font-weight: 600;
+            transition: 0.3s all;
+            animation: navMenu 1s ease forwards;
+            animation-delay: calc(0.2s * var(--i));
+            opacity: 0;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #0ef;
+        }
+
+        .hero-container {
+            display: flex;
+            padding: 25px 10%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-side h3 {
+            font-size: 30px;
+            font-weight: 700;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .info-side h1 {
+            font-size: 75px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            animation: slideRight 0.5s ease forwards;
+            opacity: 0;
+            animation-delay: 1s;
+        }
+
+        .info-side h3 span {
+            color: #0ef;
+        }
+
+        .part-1 {
+            animation: part1 1s ease forwards;
+            opacity: 0;
+        }
+
+        .part-2 {
+            animation: part2 1s ease forwards;
+            opacity: 0;
+        }
+
+        p {
+            line-height: 27px;
+            margin: 20px 0px 40px 0px;
+            animation: slideLeftP 1s ease forwards;
+            opacity: 0;
+            animation-delay: 1.2s;
+        }
+
+        .hero-img img {
+            width: 450px;
+            animation: zoomIn 1s ease forwards;
+            animation-delay: 1s;
+            opacity: 0;
+        }
+
+        i {
+            position: relative;
+            border: 2px solid #0ef;
+            padding: 10px;
+            border-radius: 50%;
+            color: #0ef;
+            margin: 0px 8px;
+            transition: 0.3ms;
+            animation: socialIcons 1s ease forwards;
+            animation-delay: calc(.3s * var(--i));
+            opacity: 0;
+        }
+
+        i:hover {
+            box-shadow: 0 0 20px #0ef;
+        }
+
+        button {
+            background-color: #0ef;
+            margin-top: 50px;
+            padding: 20px 70px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: .3s;
+            box-shadow: 0 0 15px #0ef;
+            animation: slideUp 1s ease forwards;
+            animation-delay: 1.5s;
+            opacity: 0;
+        }
+
+        button:hover {
+            box-shadow: none;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes navMenu {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes part1 {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes part2 {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideLeftP {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes socialIcons {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 25px 10%;
+            margin: 20px 0px;
+            background-color: black;
+        }
+
+        .about-img img {
+            width: 40vw;
+        }
+
+        .heading {
+            text-align: left;
+            font-size: 60px;
+        }
+
+        .about-content h3 {
+            font-size: 1.6rem;
+        }
+
+        .about-content p {
+            line-height: 27px;
+            margin: 2rem 0 1rem;
+        }
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            padding: 29px 10%;
+            margin: 20px 0px;
+            background-color: black;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">PORTFOLIO.</a>
+        <nav class="navbar">
+            <a href="#" class="active" style="--i:1">Home</a>
+            <a href="#about" style="--i:2">About</a>
+        </nav>
+    </header>
+    <div class="hero-container">
+        <div class="info-side">
+            <h3 class="part-1">Hello Welcome, it's me</h3>
+            <h1>Keenan Paul</h1>
+            <h3 class="part-2">And Im a <span id="changing-text"> BSIT-1 Student</span></h3>
+            <p>Building the future of technology, one line of code at a time. Code/Innovate/Create!</p>
+
+            <a href="#"><i class="uil uil-facebook-f" style="--i:7"></i></a>
+            <a href="#"><i class="uil uil-twitter" style="--i:8"></i></a>
+            <a href="#"><i class="uil uil-instagram" style="--i:9"></i></a>
+            <a href="#"><i class="uil uil-linkedin" style="--i:10"></i></a>
+            <br />
+            <button class="btn">Download My Personal CV</button>
+        </div>
+        <div class="hero-img">
+            <img src="images/thisme.jpg" alt="My pic">
+        </div>
+    </div>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/prone.png" alt="my pic" />
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>BSIT-1 STUDENT</h3>
+            <p>
+                As an IT student, possesses a strong foundation in computer science,
+                programming, and various IT domains, such as network management,
+                cybersecurity, database administration, and software development.
+                They thrive in problem-solving scenarios, relishing the opportunity
+                to analyze complex issues and design effective solutions. is known for their
+                logical thinking and ability to approach challenges with a systematic and
+                analytical mindset.
+            </p>
+            <button>Read more</button>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <p>
+                Feel free to reach out. Here is my contact information:
+            </p>
+            <div class="contact-info">
+                <p>Email: ichijour559@gmail.com</p>
+                <p>Phone: 09665737717</p>
+                <p>Address: P-10 Villajosefa Poblacion</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
